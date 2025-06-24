@@ -1,4 +1,4 @@
-<script>
+
         // Game Data - Merged and expanded for new modes
         const gameData = {
             admin: {
