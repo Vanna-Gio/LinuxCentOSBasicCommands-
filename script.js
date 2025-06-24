@@ -1,4 +1,4 @@
-
+<script>
         // Game Data - Merged and expanded for new modes
         const gameData = {
             admin: {
@@ -481,7 +481,7 @@
                             <li><strong><code>yum search package</code></strong>: Searches for a specific package in CentOS repositories.</li>
                             <li><strong><code>yum update package</code></strong>: Updates a specified package to its latest version (requires an internet connection).</li>
                             <li><strong><code>yum clean all</code></strong>: Clears all cached Yum data, including package headers and metadata.</li>
-                            <li><strong><code>rm -rf /var/run/yum.pid</code></strong>: Removes the Yum lock file, often used to resolve errors where another Yum process appears to be running.</li>
+                            <li><strong><strong><code>rm -rf /var/run/yum.pid</code></strong>: Removes the Yum lock file, often used to resolve errors where another Yum process appears to be running.</li>
                         </ul>
                         <h4 class="text-xl font-semibold mt-6 mb-3">🛠️ YUM Advanced</h4>
                         <ul class="list-disc list-inside text-left text-gray-700 space-y-2">
@@ -595,7 +595,7 @@
                         <ul class="list-disc list-inside text-left text-gray-700 space-y-2">
                             <li><strong><code>rm -rf dirname</code></strong>: Force deletes a non-empty directory and all its contents recursively without prompting. (Use with extreme caution!)</li>
                             <li><strong><code>rm -rf dir1 dir2</code></strong>: Force deletes multiple non-empty directories and their contents.</li>
-                            <li><strong><code>rm -rf test*</code></strong>: Force deletes all files and directories whose names start with "test" in the current directory. (Use with extreme caution!)</li>
+                            <li><strong><strong><code>rm -rf test*</code></strong>: Force deletes all files and directories whose names start with "test" in the current directory. (Use with extreme caution!)</li>
                         </ul>
                        
                         <h4 class="text-xl font-semibold mt-6 mb-3">9. Rename or Move Directory</h4>
@@ -710,7 +710,7 @@
                             <li><strong><code>tar -zcvf "./backup$(date).tar" important_data</code></strong>: Creates a gzipped tar archive with a filename like <code>backupThu Dec 31 21:30:11 +7 2020.tar</code>. The <code>$(date)</code> command inserts the current date and time.</li>
                             <li><strong><code>tar -zcvf "./backup$(date +%F_%T).tar" important_data</code></strong>: Creates a gzipped tar archive with a more structured filename like <code>backup2020-12-31_21:39:41.tar</code>.
                                 <ul class="list-circle list-inside ml-5">
-                                    <li><code>+%F</code>: Formats date as YYYY-MM-DD.</li>
+                                    <li><code>+%F</code>: Formats date as ज्यामुळे-MM-DD.</li>
                                     <li><code>%T</code>: Formats time as HH:MM:SS.</li>
                                 </ul>
                             </li>
@@ -796,7 +796,7 @@ DW = Day of Week (0–6, where 0=Sunday or Mon–Sun)
                             <li><strong><code>10 20 * * * /sbin/shutdown -h now</code></strong>: Shuts down the system daily at 8:10 PM (20:10).</li>
                             <li><strong><code>*/5 * * * * /sbin/shutdown -h now</code></strong>: Shuts down the system every 5 minutes. (Note: This example is highly disruptive and used for demonstration of syntax).</li>
                             <li><strong><code>* */12 * * * /sbin/shutdown -h now</code></strong>: Shuts down the system every 12 hours (e.g., once at 00:XX and once at 12:XX).</li>
-                            <li><strong><code>32 18 17,21,29 11 * /sbin/shutdown -h now</code></strong>: Shuts down the system at 6:32 PM on the 17th, 21st, and 29th of November.</li>
+                            <li><strong><code>32 18 17,21,29 11 * /sbin/shutdown -h now</code></strong>: Shuts down the system at 6:32 PM on the 17th, 21th, and 29th of November.</li>
                             <li><strong><code>0 18 * * mon-fri /sbin/shutdown -h now</code></strong>: Shuts down the system at 6:00 PM on weekdays (Monday to Friday).</li>
                             <li><strong><code>0 18-20 * * mon-fri /sbin/shutdown -h now</code></strong>: Shuts down the system every minute between 6:00 PM and 8:59 PM (inclusive) on weekdays.</li>
                         </ul>
@@ -966,7 +966,7 @@ DW = Day of Week (0–6, where 0=Sunday or Mon–Sun)
                                 { stem: "Tar command", correctOption: "Archives and compresses data" },
                                 { stem: "Shell script", correctOption: "Orchestrates commands and adds dynamic logic" },
                                 { stem: "Crontab", correctOption: "Schedules automated execution of tasks" },
-                                { stem: "date +%F", correctOption: "Generates date in YYYY-MM-DD format" }
+                                { stem: "date +%F", correctOption: "Generates date in ज्यामुळे-MM-DD format" }
                             ]
                         }
                     ]
@@ -1207,7 +1207,182 @@ DW = Day of Week (0–6, where 0=Sunday or Mon–Sun)
                         }
                     ]
                 },
+                "qna-cloud-intro": {
+                    title: "Cloud: Introduction to Cloud Technology",
+                    description: `
+                        <h3 class="text-2xl font-bold mb-4">Introduction to Cloud Technology and Lab Setup</h3>
+                        <p class="text-gray-700 mb-4">Cloud technology fundamentally involves storing IT infrastructure on the internet. This provides flexible access to computing resources without the need for physical hardware on-site.</p>
+                        <h4 class="text-xl font-semibold mt-6 mb-3">Foundations of Cloud Computing:</h4>
+                        <ul class="list-disc list-inside text-left text-gray-700 space-y-2">
+                            <li><strong>Virtualization</strong>: This is a core concept, allowing a single physical hardware system to run multiple isolated virtual environments (virtual machines).
+                                <ul class="list-circle list-inside ml-5">
+                                    <li>For <strong>testing and learning</strong>: Examples include VMware Workstation, VirtualBox, and Hyper-V. These are typically installed on a personal computer.</li>
+                                    <li>For <strong>production (work environments)</strong>: More robust solutions like ESXi, Proxmox, and Citrix are used.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Containerization</strong>: Another key technology that packages applications and their dependencies into isolated containers. This ensures applications run consistently across different environments. Docker is a popular example.</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-6 mb-3">Lab Installation for Cloud Computing:</h4>
+                        <p class="text-gray-700 mb-4">To practice cloud concepts, you often set up a local lab environment:</p>
+                        <ul class="list-disc list-inside text-left text-gray-700 space-y-2">
+                            <li><strong>Virtualization Software</strong>: Install VMware Workstation or VirtualBox on your computer.</li>
+                            <li><strong>Operating System Environment</strong>: Install an operating system like Ubuntu Linux Server 22.04 within your virtualization software.</li>
+                            <li><strong>Containerization Practice</strong>: Install Docker on your Ubuntu Linux Server to practice containerization.</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-6 mb-3">Common OS Environments for Cloud Labs:</h4>
+                        <ul class="list-disc list-inside text-left text-gray-700 space-y-2">
+                            <li><strong>Window Client</strong> (e.g., Windows 11, 10, 7) and <strong>Window Server</strong> (e.g., Windows 2025, 2022, 2019, 2016).</li>
+                            <li><strong>MAC</strong> operating systems.</li>
+                            <li><strong>Linux</strong> distributions (e.g., CentOS, Redhat, Ubuntu, Debian, Suse, Kali Linux, Fedora).</li>
+                        </ul>
+                    `,
+                    quizQuestions: [
+                        {
+                            type: "multiple-choice",
+                            question: "Which of the following is considered a virtualization software primarily for testing and learning environments?",
+                            options: [
+                                { text: "ESXi", correct: false },
+                                { text: "VirtualBox", correct: true },
+                                { text: "Citrix", correct: false }
+                            ]
+                        },
+                        {
+                            type: "multiple-choice",
+                            question: "What is the core concept where IT infrastructure is stored and accessed over the internet?",
+                            options: [
+                                { text: "Virtualization", correct: false },
+                                { text: "Containerization", correct: false },
+                                { text: "Cloud Technology", correct: true }
+                            ]
+                        },
+                        {
+                            type: "fill-in-blank",
+                            question: "The technology that packages applications and their dependencies into isolated environments for consistent running is called ____.",
+                            correctAnswer: "containerization",
+                            explanation: "Containerization ensures application consistency across various environments."
+                        },
+                        {
+                            type: "fill-in-blank",
+                            question: "For a production work environment, virtualization solutions like ESXi and ____ are commonly used.",
+                            correctAnswer: "Proxmox/Citrix",
+                            explanation: "ESXi, Proxmox, and Citrix are examples of hypervisors used in production environments."
+                        },
+                        {
+                            type: "match-the-words",
+                            question: "Match the virtualization tool/platform with its typical usage scenario.",
+                            pairs: [
+                                { stem: "VMware Workstation", correctOption: "Testing/Learning" },
+                                { stem: "ESXi", correctOption: "Production Environment" },
+                                { stem: "Docker", correctOption: "Containerization" },
+                                { stem: "Ubuntu Linux Server", correctOption: "Operating system for lab environment" }
+                            ]
+                        }
+                    ]
+                },
             },
+            // NEW: Custom sentences for Listen & Type
+            listenandtype: [
+                { 
+                    sentence: "Cloud computing refers to the delivery of computing services over the internet.", 
+                    khmer: "កុំព្យូទ័រពពកសំដៅលើការផ្តល់សេវាកម្មកុំព្យូទ័រតាមរយៈអ៊ីនធឺណិត។", 
+                    answer: "Cloud computing refers to the delivery of computing services over the internet." 
+                },
+                { 
+                    sentence: "Virtualization allows a single physical server to run multiple virtual machines.", 
+                    khmer: "Virtualization អនុញ្ញាតឱ្យ server តែមួយដំណើរការ virtual machine ច្រើន។", 
+                    answer: "Virtualization allows a single physical server to run multiple virtual machines." 
+                },
+                { 
+                    sentence: "Docker is a popular tool for containerization.", 
+                    khmer: "Docker គឺជាឧបករណ៍ដ៏ពេញនិយមសម្រាប់ការប្រើប្រាស់ container។", 
+                    answer: "Docker is a popular tool for containerization." 
+                },
+                { 
+                    sentence: "The 'reboot' command is used to restart the system.", 
+                    khmer: "ពាក្យបញ្ជា 'reboot' ត្រូវបានប្រើដើម្បីចាប់ផ្តើមប្រព័ន្ធឡើងវិញ។", 
+                    answer: "The 'reboot' command is used to restart the system." 
+                },
+                { 
+                    sentence: "To switch to your home directory, use 'cd ~'.", 
+                    khmer: "ដើម្បីប្តូរទៅ home directory របស់អ្នក សូមប្រើ 'cd ~'។", 
+                    answer: "To switch to your home directory, use 'cd ~'." 
+                },
+                { 
+                    sentence: "The 'ls -l' command shows detailed file information.", 
+                    khmer: "ពាក្យបញ្ជា 'ls -l' បង្ហាញព័ត៌មានលម្អិតអំពីឯកសារ។", 
+                    answer: "The 'ls -l' command shows detailed file information." 
+                },
+                { 
+                    sentence: "You can create an empty file using the 'touch' command.", 
+                    khmer: "អ្នកអាចបង្កើតឯកសារទទេដោយប្រើពាក្យបញ្ជា 'touch'។", 
+                    answer: "You can create an empty file using the 'touch' command." 
+                },
+                { 
+                    sentence: "Crontab is used for scheduling automated tasks.", 
+                    khmer: "Crontab ត្រូវបានប្រើសម្រាប់កំណត់ពេលកិច្ចការស្វ័យប្រវត្តិ។", 
+                    answer: "Crontab is used for scheduling automated tasks." 
+                },
+                { 
+                    sentence: "User and group management are crucial for system security.", 
+                    khmer: "ការគ្រប់គ្រងអ្នកប្រើប្រាស់ និងក្រុមមានសារៈសំខាន់សម្រាប់ការការពារប្រព័ន្ធ។", 
+                    answer: "User and group management are crucial for system security." 
+                },
+                { 
+                    sentence: "To install packages on CentOS, you can use 'yum' or 'dnf'.", 
+                    khmer: "ដើម្បីដំឡើងកញ្ចប់កម្មវិធីនៅលើ CentOS អ្នកអាចប្រើ 'yum' ឬ 'dnf' ។", 
+                    answer: "To install packages on CentOS, you can use 'yum' or 'dnf'." 
+                },
+                {
+                    sentence: "The root user has full control in the Linux system.",
+                    khmer: "អ្នកប្រើប្រាស់ root មានការគ្រប់គ្រងពេញលេញនៅក្នុងប្រព័ន្ធ Linux ។",
+                    answer: "The root user has full control in the Linux system."
+                },
+                {
+                    sentence: "The 'sudo' command allows executing commands with superuser privileges.",
+                    khmer: "ពាក្យបញ្ជា 'sudo' អនុញ្ញាតឱ្យប្រតិបត្តិពាក្យបញ្ជាដោយសិទ្ធិ superuser ។",
+                    answer: "The 'sudo' command allows executing commands with superuser privileges."
+                },
+                {
+                    sentence: "To check the IP address, you can use 'ip a' or 'ifconfig'.",
+                    khmer: "ដើម្បីពិនិត្យមើល IP address អ្នកអាចប្រើ 'ip a' ឬ 'ifconfig' ។",
+                    answer: "To check the IP address, you can use 'ip a' or 'ifconfig'."
+                },
+                {
+                    sentence: "The 'cat' command displays the content of a file.",
+                    khmer: "ពាក្យបញ្ជា 'cat' បង្ហាញមាតិការបស់ឯកសារ។",
+                    answer: "The 'cat' command displays the content of a file."
+                },
+                {
+                    sentence: "Use 'mkdir -p' to create parent directories if they don't exist.",
+                    khmer: "ប្រើ 'mkdir -p' ដើម្បីបង្កើត parent directory ប្រសិនបើពួកវាមិនមាន។",
+                    answer: "Use 'mkdir -p' to create parent directories if they don't exist."
+                },
+                {
+                    sentence: "The 'tar' command is used for archiving and compression.",
+                    khmer: "ពាក្យបញ្ជា 'tar' ត្រូវបានប្រើសម្រាប់ការបង្រួមឯកសារ។",
+                    answer: "The 'tar' command is used for archiving and compression."
+                },
+                {
+                    sentence: "Cloud technology involves storing IT infrastructure on the internet.",
+                    khmer: "បច្ចេកវិទ្យា Cloud ពាក់ព័ន្ធនឹងការផ្ទុកហេដ្ឋារចនាសម្ព័ន្ធ IT នៅលើអ៊ីនធឺណិត។",
+                    answer: "Cloud technology involves storing IT infrastructure on the internet."
+                },
+                {
+                    sentence: "IaaS stands for Infrastructure as a Service.",
+                    khmer: "IaaS តំណាងឱ្យ Infrastructure as a Service ។",
+                    answer: "IaaS stands for Infrastructure as a Service."
+                },
+                {
+                    sentence: "PaaS offers a platform for developing and managing applications.",
+                    khmer: "PaaS ផ្តល់នូវ platform សម្រាប់ការអភិវឌ្ឍន៍ និងគ្រប់គ្រងកម្មវិធី។",
+                    answer: "PaaS offers a platform for developing and managing applications."
+                },
+                {
+                    sentence: "SaaS delivers software applications over the internet.",
+                    khmer: "SaaS ផ្តល់នូវកម្មវិធី software តាមរយៈអ៊ីនធឺណិត។",
+                    answer: "SaaS delivers software applications over the internet."
+                }
+            ]
         };
 
 
@@ -1258,7 +1433,7 @@ DW = Day of Week (0–6, where 0=Sunday or Mon–Sun)
 
         // Add profile image dynamically
         const profileImage = document.createElement("img");
-        profileImage.src = "image/AnnaRa.png"; // Placeholder image - replace with your actual image path
+        profileImage.src = "https://placehold.co/50x50/add8e6/000000?text=AR"; // Placeholder image - replace with your actual image path
         profileImage.alt = "Profile Image";
         profileImage.className = "profile-image"; // Apply defined styles
         profileImage.addEventListener("click", () => {
@@ -1407,33 +1582,75 @@ DW = Day of Week (0–6, where 0=Sunday or Mon–Sun)
             if (mode.startsWith('qna-centos-')) {
                 categoryData = gameData.admin[mode]; // Access directly by the mode key
                 headingText = `❓ CentOS: ${categoryData?.title || 'Commands Quiz'}`;
-            } else if (mode === 'qna-cloud') {
-                categoryData = gameData.cloud['qna-cloud']; // Access by the specific key
-                headingText = '❓ Cloud Basics Quiz';
+                if (categoryData && categoryData.quizQuestions && categoryData.quizQuestions.length > 0) {
+                    gameState.currentPool = shuffleArray(categoryData.quizQuestions);
+                    elements.gameArea.innerHTML = `
+                        <div class="container qna-game">
+                            <h2 class="text-center text-blue-600 mb-4 text-3xl font-semibold">${categoryData.title || headingText.replace('❓ ', '')}</h2>
+                            <div class="qna-description question-box mb-6 p-4 rounded-lg bg-gray-50 overflow-auto" style="max-height: 300px;">
+                                ${categoryData.description}
+                            </div>
+                            <button class="btn btn-info w-full mb-4 text-xl py-3" onclick="startQnAGameQuiz()">Start Quiz</button>
+                            <button class="btn btn-secondary w-full text-xl py-3" onclick="goHome()">Back to Home</button>
+                        </div>
+                    `;
+                } else {
+                    elements.gameArea.innerHTML = `
+                        <div class="container text-center">
+                            <h2 class="text-3xl font-semibold text-red-600 mb-4">No quiz questions available for this category!</h2>
+                            <button class="btn btn-secondary text-xl py-3 mt-4" onclick="goHome()">Back to Home</button>
+                        </div>
+                    `;
+                }
+            } else if (mode.startsWith('qna-cloud')) { // Adjusted to start with 'qna-cloud'
+                categoryData = gameData.cloud[mode]; // Access by the specific mode key
+                headingText = `❓ Cloud: ${categoryData?.title || 'Basics Quiz'}`; // Updated heading
+                if (categoryData && categoryData.quizQuestions && categoryData.quizQuestions.length > 0) {
+                    gameState.currentPool = shuffleArray(categoryData.quizQuestions);
+                    elements.gameArea.innerHTML = `
+                        <div class="container qna-game">
+                            <h2 class="text-center text-blue-600 mb-4 text-3xl font-semibold">${categoryData.title || headingText.replace('❓ ', '')}</h2>
+                            <div class="qna-description question-box mb-6 p-4 rounded-lg bg-gray-50 overflow-auto" style="max-height: 300px;">
+                                ${categoryData.description}
+                            </div>
+                            <button class="btn btn-info w-full mb-4 text-xl py-3" onclick="startQnAGameQuiz()">Start Quiz</button>
+                            <button class="btn btn-secondary w-full text-xl py-3" onclick="goHome()">Back to Home</button>
+                        </div>
+                    `;
+                } else {
+                    elements.gameArea.innerHTML = `
+                        <div class="container text-center">
+                            <h2 class="text-3xl font-semibold text-red-600 mb-4">No quiz questions available for this category!</h2>
+                            <button class="btn btn-secondary text-xl py-3 mt-4" onclick="goHome()">Back to Home</button>
+                        </div>
+                    `;
+                }
+            } else if (mode === 'listen-and-type') {
+                headingText = `🎧 Listen & Type Challenge`;
+                gameState.currentPool = shuffleArray(allListenTypeSentences); // Use the pre-populated sentences
+                if (gameState.currentPool.length > 0) {
+                     elements.gameArea.innerHTML = `
+                        <div class="container listen-type-game text-center">
+                            <h2 class="text-3xl font-semibold text-green-600 mb-6">Welcome to Listen & Type!</h2>
+                            <p class="text-gray-700 text-lg mb-6">Listen to the sentence and type exactly what you hear. Pay attention to spelling and punctuation!</p>
+                            <button class="btn btn-info w-full mb-4 text-xl py-3" onclick="startListenTypeGame()">Start Listen & Type</button>
+                            <button class="btn btn-secondary w-full text-xl py-3" onclick="goHome()">Back to Home</button>
+                        </div>
+                    `;
+                } else {
+                     elements.gameArea.innerHTML = `
+                        <div class="container text-center">
+                            <h2 class="text-3xl font-semibold text-red-600 mb-4">No sentences available for Listen & Type!</h2>
+                            <p class="text-gray-700 text-lg mb-6">Descriptions from CentOS and Cloud quizzes are used to generate sentences. Please ensure there are descriptions available.</p>
+                            <button class="btn btn-secondary text-xl py-3 mt-4" onclick="goHome()">Back to Home</button>
+                        </div>
+                    `;
+                }
             }
 
-            elements.mainHeading.textContent = `Quiz App: ${headingText.replace('❓ ', '')}`; // Update H1
+
+            elements.mainHeading.textContent = `Quiz App: ${headingText.replace('❓ ', '').replace('🎧 ', '')}`; // Update H1
             
-            if (categoryData && categoryData.quizQuestions && categoryData.quizQuestions.length > 0) {
-                gameState.currentPool = shuffleArray(categoryData.quizQuestions);
-                elements.gameArea.innerHTML = `
-                    <div class="container qna-game">
-                        <h2 class="text-center text-blue-600 mb-4 text-3xl font-semibold">${categoryData.title || headingText.replace('❓ ', '')}</h2>
-                        <div class="qna-description question-box mb-6 p-4 rounded-lg bg-gray-50 overflow-auto" style="max-height: 300px;">
-                            ${categoryData.description}
-                        </div>
-                        <button class="btn btn-info w-full mb-4 text-xl py-3" onclick="startQnAGameQuiz()">Start Quiz</button>
-                        <button class="btn btn-secondary w-full text-xl py-3" onclick="goHome()">Back to Home</button>
-                    </div>
-                `;
-            } else {
-                elements.gameArea.innerHTML = `
-                    <div class="container text-center">
-                        <h2 class="text-3xl font-semibold text-red-600 mb-4">No quiz questions available for this category!</h2>
-                        <button class="btn btn-secondary text-xl py-3 mt-4" onclick="goHome()">Back to Home</button>
-                    </div>
-                `;
-            }
         }
 
 
@@ -1455,6 +1672,19 @@ DW = Day of Week (0–6, where 0=Sunday or Mon–Sun)
                         message += '<p class="text-yellow-600 font-semibold text-xl mt-2">Great job! Keep practicing!</p>';
                     } else {
                         message += '<p class="text-red-600 font-semibold text-xl mt-2">You can do better! Review and try again!</p>';
+                    }
+                }
+            } else if (gameState.mode === 'listen-and-type') {
+                message = `You completed the Listen & Type Challenge!`;
+                message += `<p>Your final score is: <span class="text-green-600 font-bold text-2xl">${finalScore} / ${totalItems}</span> correctly typed sentences.</p>`;
+                if (totalItems > 0) {
+                    const percentage = (finalScore / totalItems) * 100;
+                    if (percentage === 100) {
+                        message += '<p class="text-green-600 font-semibold text-xl mt-2">Fantastic! You\'ve got great listening and typing skills!</p>';
+                    } else if (percentage >= 70) {
+                        message += '<p class="text-yellow-600 font-semibold text-xl mt-2">Well done! A little more practice and you\'ll master it!</p>';
+                    } else {
+                        message += '<p class="text-red-600 font-semibold text-xl mt-2">Keep practicing! Every attempt helps you improve.</p>';
                     }
                 }
             } else {
@@ -1666,4 +1896,159 @@ DW = Day of Week (0–6, where 0=Sunday or Mon–Sun)
                 displayQnAGameQuestion();
             }, 2000); // Wait 2 seconds before next question
         }
+
+        // Listen and Type Game Functions
+        let allListenTypeSentences = []; // Global array to store extracted sentences
+
+        // Function to extract plain text from HTML and split into sentences
+        function extractSentences(htmlString) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlString, 'text/html');
+            const textContent = doc.body.textContent || "";
+
+            // Regex to split by sentence-ending punctuation (., !, ?) followed by whitespace,
+            // but keep the punctuation with the sentence.
+            // Also, consider sentences ending with quotes.
+            // Filters out very short sentences (e.g., single letters or numbers) and very long ones.
+            const sentences = textContent.match(/(\b[^.!?]+[.!?]*["']?|[^.!?]+[.!?]*)\s*/g) || [];
+
+            return sentences.map(s => s.trim())
+                            .filter(s => s.length > 5 && s.length < 200); // Filter out too short/long sentences
+        }
+
+        // Populate allListenTypeSentences from gameData
+        function populateListenTypeSentences() {
+            allListenTypeSentences = [];
+
+            // Prioritize custom sentences if available
+            if (gameData.listenandtype && gameData.listenandtype.length > 0) {
+                allListenTypeSentences = gameData.listenandtype;
+                console.log("Using custom Listen & Type sentences. Total:", allListenTypeSentences.length);
+                return; // Stop here if custom data is used
+            }
+
+            // Fallback to extracting from quiz descriptions
+            for (const categoryKey in gameData) {
+                // Ensure we only process quiz categories, not the new 'listenandtype' category itself
+                if (categoryKey === 'listenandtype') continue; 
+                for (const quizKey in gameData[categoryKey]) {
+                    const description = gameData[categoryKey][quizKey].description;
+                    if (description) {
+                        const sentences = extractSentences(description);
+                        allListenTypeSentences.push(...sentences.map(s => ({ sentence: s, khmer: "", answer: s }))); // Format extracted sentences
+                    }
+                }
+            }
+            console.log("No custom Listen & Type sentences found. Extracted from quizzes. Total:", allListenTypeSentences.length);
+        }
+
+        // Call this on script load after gameData is defined
+        document.addEventListener('DOMContentLoaded', populateListenTypeSentences);
+
+        function startListenTypeGame() {
+            gameState.currentIndex = 0;
+            gameState.score = 0;
+            gameState.currentPool = shuffleArray(allListenTypeSentences); // Shuffle for each new game
+            if (gameState.currentPool.length === 0) {
+                showInfoModal("No Sentences Available", "It seems there are no sentences extracted from the current lessons. Please ensure lesson descriptions contain text for the 'Listen & Type' game or add custom sentences in the gameData.listenandtype array.");
+                return;
+            }
+            displayListenTypeQuestion();
+        }
+
+        function displayListenTypeQuestion() {
+            stopTimer();
+            if (gameState.currentIndex >= gameState.currentPool.length) {
+                displayGameEndScreen();
+                return;
+            }
+
+            const currentItem = gameState.currentPool[gameState.currentIndex];
+            const scoreDisplay = `<div class="score-timer-container">
+                                        <div class="score">Score: <span id="score">${gameState.score}</span></div>
+                                        <div class="question-count">Sentence: ${gameState.currentIndex + 1} / ${gameState.currentPool.length}</div>
+                                  </div>`;
+
+            elements.gameArea.innerHTML = `
+                <div class="container listen-type-question text-center">
+                    ${scoreDisplay}
+                    <div class="question-box mt-4 p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Listen carefully and type the sentence:</h3>
+                        <div class="flex flex-col items-center space-y-4">
+                            <button class="btn btn-info text-xl py-3 px-6" onclick="speakText(gameState.currentPool[gameState.currentIndex].sentence)">
+                                <i class="fas fa-volume-up mr-2"></i> Listen Again
+                            </button>
+                            <input type="text" id="listenTypeInput" 
+                                class="w-full max-w-lg p-3 border-2 border-gray-300 rounded-lg text-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                                placeholder="Type the sentence here...">
+                            <button class="btn btn-primary text-xl py-3 px-6 w-full max-w-xs" onclick="checkListenTypeAnswer()">
+                                Submit Answer
+                            </button>
+                            ${currentItem.khmer ? `<button class="btn btn-secondary text-sm py-2 px-4 mt-2" onclick="document.getElementById('khmerHint').classList.toggle('hidden');">
+                                <i class="fas fa-language mr-2"></i> Show Khmer Hint
+                            </button>
+                            <p id="khmerHint" class="text-gray-600 text-lg mt-2 hidden">${currentItem.khmer}</p>` : ''}
+                        </div>
+                    </div>
+                    <p id="feedback" class="mt-4 feedback-message"></p>
+                    <button class="btn btn-secondary mt-6 w-full text-xl py-3" onclick="goHome()">Exit Game</button>
+                </div>
+            `;
+            // Focus on the input field and speak the sentence automatically
+            const inputField = document.getElementById('listenTypeInput');
+            if (inputField) {
+                inputField.focus();
+                speakText(currentItem.sentence);
+            }
+        }
+
+        // Helper to normalize text for comparison (lowercase, remove most punctuation, reduce multiple spaces)
+        function normalizeText(text) {
+            // This normalization is for lenient checking. For strict checking, use exact string.
+            // For now, let's keep it simple and just trim for user's requested exact answer.
+            return text.trim();
+        }
+
+        function checkListenTypeAnswer() {
+            const userInput = document.getElementById('listenTypeInput').value;
+            const currentItem = gameState.currentPool[gameState.currentIndex];
+            const originalAnswer = currentItem.answer; // Use the specific 'answer' field
+            const feedbackElement = document.getElementById('feedback');
+
+            // Compare directly as requested for 'exact' answer
+            const isCorrect = (userInput.trim() === originalAnswer.trim());
+
+            // Disable input and submit button immediately
+            document.getElementById('listenTypeInput').disabled = true;
+            elements.gameArea.querySelector('.btn-primary').disabled = true;
+
+            if (isCorrect) {
+                gameState.score++;
+                feedbackElement.innerHTML = `<p class="success-message">Correct! 🎉</p>`;
+            } else {
+                feedbackElement.innerHTML = `
+                    <p class="error-message">Incorrect. 🤔</p>
+                    <p class="text-gray-700 text-base mt-2">Your answer: "${userInput}"</p>
+                    <p class="text-gray-700 text-base">Correct: "${originalAnswer}"</p>
+                `;
+                 // Show Khmer hint if it exists and answer is incorrect
+                if (currentItem.khmer) {
+                    const khmerHintElement = document.getElementById('khmerHint');
+                    if (khmerHintElement) {
+                        khmerHintElement.classList.remove('hidden');
+                        const showKhmerBtn = elements.gameArea.querySelector('button[onclick*="showKhmerHint"]');
+                        if (showKhmerBtn) showKhmerBtn.style.display = 'none'; // Hide the hint button if hint is shown
+                    }
+                }
+            }
+            document.getElementById('score').textContent = gameState.score;
+            feedbackElement.classList.add('show');
+
+            setTimeout(() => {
+                feedbackElement.classList.remove('show');
+                gameState.currentIndex++;
+                displayListenTypeQuestion();
+            }, 5000); // Give user time to read correct answer
+        }
+
     
